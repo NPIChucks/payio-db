@@ -4,7 +4,7 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    const { INTEGER, STRING } = Sequelize;
+    const { INTEGER, STRING, DATE } = Sequelize;
     await queryInterface.createTable('permissions', {
       permissionId: {
         type: INTEGER,

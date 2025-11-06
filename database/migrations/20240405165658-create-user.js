@@ -4,7 +4,7 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    const { INTEGER, STRING, ENUM, BOOLEAN } = Sequelize;
+    const { INTEGER, STRING, ENUM, DATE } = Sequelize;
     await queryInterface.createTable('users', {
       userId: {
         type: INTEGER,

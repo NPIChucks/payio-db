@@ -6,8 +6,8 @@ require('dotenv').config();
 module.exports = {
   async up(queryInterface, Sequelize) {
     const { PASS_HASH1, PASS_HASH2 } = process.env;
-    const created_at = new Date();
-    const updated_at = created_at;
+    const createdAt = new Date();
+    const updatedAt = createdAt;
     await queryInterface.bulkInsert(
       'users',
       [
@@ -31,7 +31,7 @@ module.exports = {
           phone: '08068508675',
           permissionId: 2,
         },
-      ].map((item) => ({ ...item, created_at, updated_at })),
+      ].map((item) => ({ ...item, createdAt, updatedAt })),
       {},
     );
   },
