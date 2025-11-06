@@ -1,0 +1,25 @@
+{
+  "name": "payio-db",
+  "version": "1.0.0",
+  "description": "Database migration for the payio payment system",
+  "main": "main.js",
+  "scripts": {
+    "set:config": "node scripts/set-config.js",
+    "db:reset": "yarn set:config && yarn db:undo && yarn db:migrate && yarn db:seed",
+    "db:undo": "yarn set:config && yarn sequelize-cli db:migrate:undo:all --debug",
+    "db:migrate": "yarn set:config && yarn sequelize-cli db:migrate --debug",
+    "db:seed": "yarn set:config && yarn sequelize-cli db:seed:all --debug"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.3.1",
+    "moment": "^2.29.4",
+    "mysql2": "^3.6.5",
+    "sequelize": "^6.35.1",
+    "sequelize-cli": "^6.6.2",
+    "umzug": "2.3.0"
+  }
+}
